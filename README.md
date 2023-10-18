@@ -59,7 +59,26 @@ isEmpty(undefined);
 // Output: false
 isEmpty("DM");
 isEmpty(["DM", 36]);
-isEmpty({ key: "Demo" }); 
+isEmpty({ key: "DM" }); 
+```
+
+### isEqual
+Method do check if two values are equal
+
+```js
+// Util
+import { isEqual } from "@didiermargarido/ts-utilities";
+
+// Output: true
+isEqual("DM", "DM");
+isEqual(true, true);
+isEqual([1, 2], [1, 2]);
+isEqual([{ key: "DM" }], [{ key: "DM" }]);
+
+// Output: false
+isEqual("DM", "MD");
+isEqual(true, false);
+isEqual({ key: "DM" }, { key: "MD" }); 
 ```
 
 ## Author
