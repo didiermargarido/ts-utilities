@@ -1,0 +1,31 @@
+name: PR Title
+
+on:
+  pull_request:
+    types:
+      - edited
+      - opened
+      - synchronize
+
+jobs:
+  pr_title:
+    name: Lint Title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Validate PR Title
+        run: |
+          title="${{ github.event.pull_request.title }}"
+
+          # Define the regex pattern for commitlint/config-conventional standard
+          pattern="^(hotfix|fix|build|feat|perf|refactor|test|style|revert|chore|docs|ci)(\(.+\))?: .+$"
+
+          if [[ ! $title =~ $pattern ]]; then
+            echo "error: Invalid PR title. Please follow the commitlint/config-conventional convention."
+            echo "Example: type(scope): description"
+            exit 1
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
