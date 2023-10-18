@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+lint_message="\nError: Linting failed. Your commit will be rejected.\n\n"
+
+# Run lint-staged and prevent commit if linting fails
+npx lint-staged || { echo "$lint_message"; exit 1; }
