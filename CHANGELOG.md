@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/didiermargarido/ts-utilities/compare/v1.0.0...v1.1.0) (2023-10-18)
+
+
+### Features
+
+* add is equal util ([8332e6f](https://github.com/didiermargarido/ts-utilities/commit/8332e6f760eb8d0d6d22282b12c3d13944653154))
+
 ## 1.0.0 (2023-10-18)
 
 
