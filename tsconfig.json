@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    // Set the JavaScript language version for emitted JavaScript and include compatible library declarations
+    "target": "ES6",
+    // Specify what module code is generated
+    "module": "CommonJS",
+    // Generate .d.ts files from TypeScript and JavaScript files in your project
+    "declaration": true,
+    // Specify an output folder for all emitted files
+    "outDir": "dist",
+    // Emit additional JavaScript to ease support for importing CommonJS modules
+    "esModuleInterop": true,
+    // Generate source maps to enable easier debugging of TypeScript code
+    "sourceMap": true,
+    // Allow importing JSON modules directly in TypeScript files
+    "resolveJsonModule": true,
+    // Ensure that casing is correct in imports
+    "forceConsistentCasingInFileNames": true,
+    // Enable all strict type-checking options
+    "strict": true,
+    // When type checking, take into account 'null' and 'undefined'
+    "strictNullChecks": true,
+    // When assigning functions, check to ensure parameters and the return values are subtype-compatible
+    "strictFunctionTypes": true,
+    // Check that the arguments for 'bind', 'call', and 'apply' methods match the original function
+    "strictBindCallApply": true,
+    // Check for class properties that are declared but not set in the constructor
+    "strictPropertyInitialization": true,
+    // Enable error reporting for expressions and declarations with an implied 'any' type
+    "noImplicitAny": true,
+    // Enable error reporting when 'this' is given the type 'any'
+    "noImplicitThis": true,
+    // Enable error reporting when local variables aren't read
+    "noUnusedLocals": true,
+    // Raise an error when a function parameter isn't read
+    "noUnusedParameters": true,
+    // Enable error reporting for code paths that do not explicitly return in a function
+    "noImplicitReturns": true,
+    // Enable error reporting for fallthrough cases in switch statements
+    "noFallthroughCasesInSwitch": true,
+    // Ensure overriding members in derived classes are marked with an override modifier
+    "noImplicitOverride": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/__tests__", "node_modules", "dist"]
+}
