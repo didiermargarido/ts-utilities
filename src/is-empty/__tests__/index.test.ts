@@ -14,7 +14,7 @@ describe.only("Util // isEmpty", () => {
 
   // Not empty values
   it("should return false if value is not empty", () => {
-    const values = ["DM", 0, ["Frank"], [0], { key: "DM" }, false];
+    const values = ["DM", 0, ["DM"], [0], { key: "DM" }, false];
     values.forEach((value) => expect(isEmpty(value)).toBe(false));
   });
 
