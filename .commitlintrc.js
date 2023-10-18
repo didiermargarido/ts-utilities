@@ -12,7 +12,9 @@ const config = {
     // Ignore automatic release messages (chore(release): ...)
     (commit) => commit.includes("chore(release):"),
     // Ignore merge commits (Merge ...)
-    (commit) => commit.includes("Merge ")
+    (commit) => commit.includes("Merge "),
+    // Ignore long message body lines caused by squash merges with merge commits annotations
+    (commit) => commit.includes("(#") && commit.includes(")")
   ]
 };
 
