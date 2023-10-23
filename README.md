@@ -99,7 +99,7 @@ const obj2 = {
 };
 
 // Output { car: "Peugeot", color: "White" }
-const result = deepMerge(obj1, obj2)
+deepMerge(obj1, obj2)
 
 // Merge three objects with nested properties
 const obj1 = { 
