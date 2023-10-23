@@ -63,7 +63,7 @@ isEmpty({ key: "DM" });
 ```
 
 ### isEqual
-Method do check if two values are equal
+Method to check if two values are equal.
 
 ```js
 // Util
@@ -79,6 +79,51 @@ isEqual([{ key: "DM" }], [{ key: "DM" }]);
 isEqual("DM", "MD");
 isEqual(true, false);
 isEqual({ key: "DM" }, { key: "MD" }); 
+```
+
+### deepMerge
+Method to merge multiple objects.
+
+```js
+// Util
+import { deepMerge } from "@didiermargarido/ts-utilities";
+
+// Merge two single objects
+const obj1 = { 
+  car: "Ford",
+};
+
+const obj2 = { 
+  car: "Peugeot", 
+  color: "White"
+};
+
+// Output { car: "Peugeot", color: "White" }
+const result = deepMerge(obj1, obj2)
+
+// Merge three objects with nested properties
+const obj1 = { 
+  car: "Ford", 
+  specifications: { 
+    km: 15000, 
+    diesel: true 
+  } 
+};
+
+const obj2 = { 
+  car: "Peugeot", 
+  color: "White"
+};
+
+const obj3 = { 
+  car: "Peugeot", 
+  specifications: { 
+    diesel: false
+  } 
+};
+
+// Output: { car: "Peugeot", color: "White", specifications: { km: 15000, diesel: false } }
+deepMerge(obj1, obj2, obj3);
 ```
 
 ## Author
