@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/didiermargarido/ts-utilities/compare/v1.1.0...v1.2.0) (2023-10-24)
+
+
+### Features
+
+* deep merge and secure mask utils ([#2](https://github.com/didiermargarido/ts-utilities/issues/2)) ([3640ecd](https://github.com/didiermargarido/ts-utilities/commit/3640ecd8ae509e9bbfe2d929eca42cbf6ba6280f))
+
 ## [1.1.0](https://github.com/didiermargarido/ts-utilities/compare/v1.0.0...v1.1.0) (2023-10-18)
 
 
