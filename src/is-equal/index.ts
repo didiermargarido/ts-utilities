@@ -35,7 +35,7 @@ const compareObjects = <T>(valueA: T, valueB: T): boolean | undefined => {
 };
 
 /**
- * Method do check if two values are equal
+ * Method to check if two values are equal
  * @param valueA - string, number, array, object, undefined or null
  * @param valueB - string, number, array, object, undefined or null
  * @example isEqual("DM", "DM") = true

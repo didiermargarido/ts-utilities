@@ -63,7 +63,7 @@ isEmpty({ key: "DM" });
 ```
 
 ### isEqual
-Method do check if two values are equal
+Method to check if two values are equal.
 
 ```js
 // Util
@@ -79,6 +79,79 @@ isEqual([{ key: "DM" }], [{ key: "DM" }]);
 isEqual("DM", "MD");
 isEqual(true, false);
 isEqual({ key: "DM" }, { key: "MD" }); 
+```
+
+### deepMerge
+Method to merge multiple objects.
+
+```js
+// Util
+import { deepMerge } from "@didiermargarido/ts-utilities";
+
+// Merge two single objects
+const obj1 = { 
+  car: "Ford",
+};
+
+const obj2 = { 
+  car: "Peugeot", 
+  color: "White"
+};
+
+// Output { car: "Peugeot", color: "White" }
+deepMerge(obj1, obj2)
+
+// Merge three objects with nested properties
+const obj1 = { 
+  car: "Ford", 
+  specifications: { 
+    km: 15000, 
+    diesel: true 
+  } 
+};
+
+const obj2 = { 
+  car: "Peugeot", 
+  color: "White"
+};
+
+const obj3 = { 
+  car: "Peugeot", 
+  specifications: { 
+    diesel: false
+  } 
+};
+
+// Output: { car: "Peugeot", color: "White", specifications: { km: 15000, diesel: false } }
+deepMerge(obj1, obj2, obj3);
+```
+
+### secureMask
+Method to securely mask information by revealing specified digits from the start or end.
+
+```js
+// Util
+import { secureMask } from "@didiermargarido/ts-utilities";
+
+// Optional options allowed
+{
+  digits: number // default is "4"
+  char: string // default is "*"
+  pad: "start" | "end" // default is "start"
+}
+
+// Output: "*****6789"
+secureMask("123456789");
+
+// Output: "*******89"
+secureMask(123456789, { digits: 2 });
+
+// Output: "123------"
+secureMask("123456789", { digits: 3, char: "-", pad: "end" });
+
+// Output: undefined
+secureMask(undefined);
+secureMask(null);
 ```
 
 ## Author
