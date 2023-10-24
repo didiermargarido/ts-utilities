@@ -126,6 +126,37 @@ const obj3 = {
 deepMerge(obj1, obj2, obj3);
 ```
 
+### secureMask
+Method to securely mask information by revealing specified digits from the start or end.
+
+```js
+// Util
+import { secureMask } from "@didiermargarido/ts-utilities";
+
+// Value type
+number, string, undefined or null
+
+// Optional options allowed
+{
+  digits: number // default is "4"
+  char: string // default is "*"
+  pad: "start" | "end" // default is "start"
+}
+
+// Output: "*****6789"
+secureMask("123456789");
+
+// Output: "*******89"
+secureMask(123456789, { digits: 2 });
+
+// Output: "123------"
+secureMask("123456789", { digits: 3, char: "-", pad: "end" });
+
+// Output: undefined
+secureMask(undefined);
+secureMask(null);
+```
+
 ## Author
 **Didier Margarido**\
 [github/didiermargarido](https://github.com/didiermargarido)
