@@ -133,9 +133,6 @@ Method to securely mask information by revealing specified digits from the start
 // Util
 import { secureMask } from "@didiermargarido/ts-utilities";
 
-// Value type
-number, string, undefined or null
-
 // Optional options allowed
 {
   digits: number // default is "4"
