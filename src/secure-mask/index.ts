@@ -2,24 +2,24 @@
  * Options for configuring secure masking behavior
  * @property digits - number of digits to reveal
  * @property char - character used for masking
- * @property type - type of masking, either "start" or "end"
+ * @property pad - pad of masking, either "start" or "end"
  */
 interface ISecureMaskOptions {
   digits?: number;
   char?: string;
-  type?: "start" | "end";
+  pad?: "start" | "end";
 }
 
 /**
  * Default options for secure masking
  * @property digits - defaults to 4
  * @property char - defaults to "*"
- * @property type - defaults to "start"
+ * @property pad - defaults to "start"
  */
 const defaultOptions: Required<ISecureMaskOptions> = {
   digits: 4,
   char: "*",
-  type: "start"
+  pad: "start"
 };
 
 /**
@@ -28,11 +28,11 @@ const defaultOptions: Required<ISecureMaskOptions> = {
  * @param options - optional options for secure masking:
  * @property {digits} - number of digits to reveal (default: 4)
  * @property {char} - character used for masking (default: "*")
- * @property {type} - type of masking, either "start" or "end" (default: "start")
+ * @property {pad} - pad of masking, either "start" or "end" (default: "start")
  * @example secureMask("123456789") = "*****6789"
  * @example secureMask(123456789, { digits: 2 }) = "*******89"
  * @example secureMask("123456789", { char: "-" }) = "-----6789"
- * @example secureMask(123456789, { type: "end" }) = "1234*****"
+ * @example secureMask(123456789, { pad: "end" }) = "1234*****"
  * @example secureMask(undefined) = undefined
  * @example secureMask(null) = undefined
  * @returns masked string or undefined if the input value is null or undefined
@@ -45,7 +45,7 @@ export const secureMask = (
   if (!value) return;
 
   // Extract options or use defaults
-  const { digits, char, type } = {
+  const { digits, char, pad } = {
     ...defaultOptions,
     ...options
   };
@@ -53,8 +53,8 @@ export const secureMask = (
   // Convert value to string
   const currentValue = value.toString();
 
-  // Calculate masked value based on type
-  switch (type) {
+  // Calculate masked value based on pad
+  switch (pad) {
     case "start":
       return currentValue.slice(-digits).padStart(currentValue.length, char);
     case "end":

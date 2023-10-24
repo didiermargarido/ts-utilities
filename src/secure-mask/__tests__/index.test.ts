@@ -26,14 +26,14 @@ describe("Util > secureMask", () => {
     expect(secureMask("123456789", { char: "-" })).toEqual("-----6789");
   });
 
-  // Type option
+  // Pad option
   it("should return number with last digits masked", () => {
-    expect(secureMask(123456789, { type: "end" })).toEqual("1234*****");
+    expect(secureMask(123456789, { pad: "end" })).toEqual("1234*****");
   });
 
   // All options
   it("should return number with last 6 digits masked using char '.'", () => {
-    expect(secureMask(123456789, { digits: 3, char: ".", type: "end" })).toEqual("123......");
+    expect(secureMask(123456789, { digits: 3, char: ".", pad: "end" })).toEqual("123......");
   });
 
   // Undefined value
